@@ -20,11 +20,11 @@ export class App extends React.Component<{}, State> {
       const reg = new RegExp('^[0-9 ]*$')
       event.target.value = event.target.value.replace(/\s/g, '').replace(/(\d{4})/g, '$1 ').trim();
 
-      if (reg.test(event.target.value) && this.state.cardNumber.length <=18) {
+      if (reg.test(event.target.value) ) {
         this.setState({
           cardNumber: event.target.value,
         })
-      }
+      };
 
       if (this.state.cardNumber[0] === '4' && this.state.cardNumber[1] === '9') {
         this.setState(state => ({
@@ -50,8 +50,12 @@ export class App extends React.Component<{}, State> {
 
       function expirationDate(value: string) {
         const clearValue = makeNumber(value);
+        let month = clearValue.slice(0, 2);
+        if (Number(month) > 12) {
+          month = String(12)
+        }
         if(clearValue.length >= 3) {
-          return `${clearValue.slice(0, 2)}/${clearValue.slice(2, 4)}`
+          return `${month}/${clearValue.slice(2, 4)}`
         }
         return clearValue;
       }
@@ -65,7 +69,7 @@ export class App extends React.Component<{}, State> {
     const { value } = event.target;
     const reg = new RegExp('^[0-9]*$');
 
-    if(value.match(reg) && this.state.cvc.length <= 2) {
+    if(value.match(reg)) {
       this.setState({
         cvc: value,
       })
@@ -99,7 +103,7 @@ export class App extends React.Component<{}, State> {
                 type='text'
                 id="input-cardNumber"
                 name="cardNumber"
-                required
+                maxLength="19"
                 placeholder="•••• •••• •••• ••••"
                 value={this.state.cardNumber}
                 onChange={this.cardNumberHandler}
@@ -119,7 +123,6 @@ export class App extends React.Component<{}, State> {
                     id="input-expired"
                     name="expired"
                     placeholder="MM/YY"
-                    required
                     value={this.state.expired}
                     onChange={this.expiredHandler}
                 />
@@ -133,7 +136,7 @@ export class App extends React.Component<{}, State> {
                     type='string'
                     id="input-cvc"
                     name="cvc"
-                    required
+                    maxLength="3"
                     placeholder="CVC"
                     value={this.state.cvc}
                     onChange={this.cvcHandler}
