@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/credit_card//static/css/main.71d137f3.chunk.css",
-    "main.js": "/credit_card//static/js/main.c2342b1b.chunk.js",
-    "main.js.map": "/credit_card//static/js/main.c2342b1b.chunk.js.map",
+    "main.js": "/credit_card//static/js/main.10ff7ad7.chunk.js",
+    "main.js.map": "/credit_card//static/js/main.10ff7ad7.chunk.js.map",
     "runtime-main.js": "/credit_card//static/js/runtime-main.2b8095b0.js",
     "runtime-main.js.map": "/credit_card//static/js/runtime-main.2b8095b0.js.map",
     "static/js/2.854a1194.chunk.js": "/credit_card//static/js/2.854a1194.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.2b8095b0.js",
     "static/js/2.854a1194.chunk.js",
     "static/css/main.71d137f3.chunk.css",
-    "static/js/main.c2342b1b.chunk.js"
+    "static/js/main.10ff7ad7.chunk.js"
   ]
 }
